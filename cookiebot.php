@@ -2381,7 +2381,7 @@ function fetch_json($url, $method, $header){
 
 //Downloads a CSV document with the url names on the selected domain in the Dashboard page.
 if(isset($_POST['submitCSV_x'])){
-	$CSV = curl("https://app-cookiebot-api-umbracodashboard-prod.azurewebsites.net/urls/" . get_option('domainID') . "?format=json", "GET", "Authorization: Bearer " . $_SESSION['token']);
+	$CSV = fetch_json("https://app-cookiebot-api-umbracodashboard-prod.azurewebsites.net/urls/" . get_option('domainID') . "?format=json", "GET", "Authorization: Bearer " . $_SESSION['token']);
 
 	$file_name = 'Domains_' . get_option('domain_id') . '.csv';
 
